@@ -5,23 +5,19 @@ class Ham extends Component {
 	constructor(){
     super();
       this.state= {
-	      hamLicense: ""
+	      formattedAddress: ""
 	    }
 	  }
 
-  ComponentWillMount(){
-    console.log("Ham will mount");
-  }
-
   componentDidMount(){
     console.log("Mounted");
-    fetch('https://callook.info/kk6vny/json')
+
+    fetch('https://maps.googleapis.com/maps/api/geocode/json?address=Pantheon,%20San%20Francsco,%20CA&key=AIzaSyAtRIxwlNll1t441LlLKtSGZP2zCerjWgc')
     .then(results => {
-      console.log("results!")
       return results.json();
     }).then(data => {
-      console.log("data!!!", data);
-      this.setState({hamLicense: data});
+      console.log("data!!!", data.results);
+      this.setState({formattedAddress: data.results[0].formatted_address});
     }).catch(err => {
       console.log("error: ",err);
     })
@@ -31,9 +27,9 @@ class Ham extends Component {
     console.log("rendered Ham");
     return (
       <div className="">
-      	<h1>This is a thing</h1>
+      	<h1>Google Maps Geocoder Example</h1>
           <p>
-            {this.state.hamLicense}
+            {this.state.formattedAddress}
           </p>
       </div>
     );

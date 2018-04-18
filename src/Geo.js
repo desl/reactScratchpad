@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 // import './Geo.css';
 
-class Ham extends Component {
+class Geo extends Component {
 	constructor(){
     super();
       this.state= {
-	      formattedAddress: ""
+	      formattedAddress: "",
+        formEntry: ""
 	    }
 	  }
 
@@ -24,7 +25,7 @@ class Ham extends Component {
   }
 
   render() {
-    console.log("rendered Ham");
+    console.log("rendered Geo");
     return (
       <div className="">
       	<h1>Google Maps Geocoder Example</h1>
@@ -36,4 +37,4 @@ class Ham extends Component {
   }
 }
 
-export default Ham;
+export default Geo;
