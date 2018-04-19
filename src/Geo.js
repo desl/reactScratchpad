@@ -29,7 +29,7 @@ class Geo extends Component {
   getFormattedAddress(address){
     
     const apiKey = googleMapsApiKey;
-    // Get your own key and set apiKey to it! (remove the import in line 2)
+    // Get your own key and set apiKey to it! (and remove the import in line 2)
     // https://developers.google.com/maps/documentation/javascript/get-api-key
 
     const addressQuery = '?address=';
