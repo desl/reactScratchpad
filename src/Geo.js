@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import googleMapsApiKey from './API_key.js'
 
 class Geo extends Component {
-	constructor(){
+  constructor(){
     super();
       this.state= {
-	      formattedAddress: "",
+        formattedAddress: "",
         submittedAddress: "",
         formValue: "Exploratorium"
-	    }
+      }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-	}
+  }
 
   handleChange(event) {
     this.setState({formValue: event.target.value});
